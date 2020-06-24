@@ -1,3 +1,4 @@
+declare function renderLayuiForm(): void;
 declare type Mode = 'edit' | 'preview';
 interface TopicConfig {
     title: string;
@@ -23,7 +24,9 @@ declare class RadioTopic extends Topic {
     create(): this;
     mouted(): this;
     protected build(): void;
-    private buildOption;
+    private buildPreview;
+    private buildEdit;
+    private bindEvent;
 }
 interface CheckBoxTopicOptions {
 }

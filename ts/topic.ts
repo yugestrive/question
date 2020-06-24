@@ -1,9 +1,13 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-06-24 22:57:21
- * @LastEditTime: 2020-06-25 01:23:13
+ * @LastEditTime: 2020-06-25 03:06:19
  * @Description:
  */
+
+function renderLayuiForm() {
+  layui.form.render()
+}
 
 type Mode = 'edit' | 'preview'
 
@@ -67,32 +71,112 @@ class RadioTopic extends Topic {
     return this
   }
 
+  // 构建组件
   protected build(): void {
     this.el.innerHTML = `
-      <div class="question_title">${this.no}. ${this.config.title}</div>
-      <div class="question_wrap flex">
-        ${this.config.options.map((option) => this.buildOption(option)).join('\n')}
-      </div>
-      <div class="edit_question">
-          <div class="editorWrap">
-              <div id="editor" class="toolbar"></div>
-              <div id="text" class="text"></div>
-          </div>
-      </div>
+      ${this.buildPreview()}
+      ${this.mode === 'edit' ? this.buildEdit() : ''}
     `
-    layui.form.render()
+    this.bindEvent()
+    renderLayuiForm()
   }
 
-  private buildOption(option: string): string {
-    return `
+  // 构建预览区
+  private buildPreview(): string {
+    const _buildOption = (option: string) => `
       <input
         type="radio"
-        name="${this.id}"
+        name="radio_option_${this.id}"
         value="${option}"
         title="${option}" lay-skin="primary"
         ${this.mode === 'edit' ? 'disabled' : ''}
       >
     `
+    return `
+      <div class="preview_question">
+        <div class="question_title">${this.no}. ${this.config.title}</div>
+        <div class="question_wrap flex">
+          ${this.config.options.map((option) => _buildOption(option)).join('\n')}
+        </div>
+      </div>
+    `
+  }
+
+  // 构建编辑区
+  private buildEdit(): string {
+    const _buildOption = (option: string, index: number) => `
+      <tr>
+          <td>
+            <input
+              data-role="option"
+              data-index="${index}"
+              value="${option}"
+              class="input"
+              type="text"
+              placeholder="选项"
+            />
+            <i data-role="remove" data-index="${index}" class="layui-icon">&#xe616;</i>
+          </td>
+          <td class="default">
+            <input
+              data-role="default"
+              data-index="${index}"
+              type="radio"
+              name="radio_default_${this.id}"
+              title="若选中，用户在填问卷时此选项会默认被选中"
+              lay-ignore
+            />
+          </td>
+          <td class="move default">
+            <span data-role="up" data-index="${index}">上移</span>
+            <span data-role="down" data-index="${index}">下移</span>
+          </td>
+      </tr>
+    `
+    return `
+      <div class="edit_question">
+          <div class="editorWrap">
+              <textarea
+                data-role="title"
+                class="layui-textarea"
+                rows="3"
+                placeholder="请输入标题"
+              >${this.config.title}</textarea>
+          </div>
+          <div class="selScrrol">
+              <table class="table_option" cellspacing="0" cellpadding="0" width="98%">
+                  <tr class="table_head">
+                      <td>
+                          <span>选项文字</span>
+                      </td>
+                      <td class="default">默认</td>
+                      <td class="default">上移下移</td>
+                  </tr>
+                  ${this.config.options.map((option, index) => _buildOption(option, index)).join('\n')}
+              </table>
+          </div>
+          <div class="addbtn">
+              <span class="btn">
+                  <span class="icon">+</span>
+                  <a data-role="add" class="aText" href="javascript:">添加选项</a>
+              </span>
+          </div>
+          <div data-role="finish" class="finishBtn">完成编辑</div>
+      </div>
+    `
+  }
+
+  private bindEvent() {
+    this.el.addEventListener('change', (e) => {
+      const target = e.target as any
+      const { role, index } = target.dataset
+      if (role === 'option') {
+        this.config.options[~~index] = target.value
+      }else if(role === 'title') {
+        this.config.title = target.value
+      }
+      this.build()
+    })
   }
 }
 
