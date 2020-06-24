@@ -46,11 +46,8 @@ var RadioTopic = (function (_super) {
     };
     RadioTopic.prototype.build = function () {
         var _this = this;
-        console.log("\n    <div class=\"question_title\">" + this.no + ". " + this.config.title + "</div>\n    <div class=\"question_wrap flex\">\n      " + this.config.options.map(function (option) { return _this.buildOption(option); }).join('\n') + "\n    </div>\n    <div class=\"edit_question\">\n        <div class=\"editorWrap\">\n            <div id=\"editor\" class=\"toolbar\"></div>\n            <div id=\"text\" class=\"text\"></div>\n        </div>\n    </div>\n  ");
         this.el.innerHTML = "\n      <div class=\"question_title\">" + this.no + ". " + this.config.title + "</div>\n      <div class=\"question_wrap flex\">\n        " + this.config.options.map(function (option) { return _this.buildOption(option); }).join('\n') + "\n      </div>\n      <div class=\"edit_question\">\n          <div class=\"editorWrap\">\n              <div id=\"editor\" class=\"toolbar\"></div>\n              <div id=\"text\" class=\"text\"></div>\n          </div>\n      </div>\n    ";
-        layui.use(['form', 'upload'], function () {
-            var $ = layui.jquery, upload = layui.upload, form = layui.form;
-        });
+        layui.form.render();
     };
     RadioTopic.prototype.buildOption = function (option) {
         return "\n      <input\n        type=\"radio\"\n        name=\"" + this.id + "\"\n        value=\"" + option + "\"\n        title=\"" + option + "\" lay-skin=\"primary\"\n        " + (this.mode === 'edit' ? 'disabled' : '') + "\n      >\n    ";

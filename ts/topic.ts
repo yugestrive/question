@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-06-24 22:57:21
- * @LastEditTime: 2020-06-25 01:08:36
+ * @LastEditTime: 2020-06-25 01:23:13
  * @Description:
  */
 
@@ -68,18 +68,6 @@ class RadioTopic extends Topic {
   }
 
   protected build(): void {
-    console.log(`
-    <div class="question_title">${this.no}. ${this.config.title}</div>
-    <div class="question_wrap flex">
-      ${this.config.options.map((option) => this.buildOption(option)).join('\n')}
-    </div>
-    <div class="edit_question">
-        <div class="editorWrap">
-            <div id="editor" class="toolbar"></div>
-            <div id="text" class="text"></div>
-        </div>
-    </div>
-  `)
     this.el.innerHTML = `
       <div class="question_title">${this.no}. ${this.config.title}</div>
       <div class="question_wrap flex">
@@ -92,25 +80,7 @@ class RadioTopic extends Topic {
           </div>
       </div>
     `
-    layui.use(['form', 'upload'], function () {
-      var $ = layui.jquery,
-        upload = layui.upload,
-        form = layui.form
-
-      // form.render('select', 'select')
-
-      // upload.render({
-      //   elem: '#fileUp',
-      //   url: 'https://httpbin.org/post', //改成您自己的上传接口
-      //   accept: 'file', //普通文件
-      //   // ,exts: 'zip|rar|7z' //只允许上传压缩文件
-      //   size: 4096,
-      //   done: function (res: any) {
-      //     layer.msg('上传成功')
-      //     console.log(res)
-      //   },
-      // })
-    })
+    layui.form.render()
   }
 
   private buildOption(option: string): string {
