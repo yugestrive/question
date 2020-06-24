@@ -1,0 +1,171 @@
+.page_wrap {
+  height: 100vh;
+  border: 1px solid #ccc;
+  padding-top: 5px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.page_wrap .center_content {
+  width: 60%;
+  margin: 0 auto;
+  border-top: 3px solid #1E9FFF;
+  border-left: 1px dashed #bbb;
+  border-right: 1px dashed #bbb;
+  font-size: 14px;
+  position: relative;
+}
+.page_wrap .center_content .left_check {
+  position: absolute;
+  left: -140px;
+  width: 130px;
+  border: 1px solid #dfdfdf;
+  box-shadow: 0 0 3px #adadad6c;
+  border-radius: 5px;
+  top: 40px;
+  box-sizing: border-box;
+  padding: 1px 3px 5px 3px;
+}
+.page_wrap .center_content .left_check::before {
+  content: "";
+  height: 3px;
+  background-color: #548ec7;
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  border-radius: 3px;
+}
+.page_wrap .center_content .left_check .con {
+  border: 1px dashed #d1d1d1;
+  background-color: #f6fbff;
+  padding: 10px 6px;
+}
+.page_wrap .center_content .left_check .con .top .title, .page_wrap .center_content .left_check .con .bottom .title {
+  text-align: center;
+  font-size: 14px;
+  color: #647786;
+}
+.page_wrap .center_content .left_check .con .top .check_item, .page_wrap .center_content .left_check .con .bottom .check_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0;
+}
+.page_wrap .center_content .left_check .con .top .check_item .name, .page_wrap .center_content .left_check .con .bottom .check_item .name {
+  color: #000;
+  font-weight: 600;
+  font-size: 13px;
+}
+.page_wrap .center_content .left_check .con .top .check_item .add, .page_wrap .center_content .left_check .con .bottom .check_item .add {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid #74b6da;
+  color: #74b6da;
+  font-size: 19px;
+  text-align: center;
+  line-height: 13px;
+  cursor: pointer;
+}
+.page_wrap .center_content .left_check .con .top {
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 5px;
+}
+.page_wrap .center_content .head {
+  padding: 30px 60px 10px 60px;
+  border-bottom: 1px solid #bbb;
+}
+.page_wrap .center_content .question_title {
+  position: relative;
+  color: #686868;
+  left: 10px;
+  margin-bottom: 5px;
+}
+.page_wrap .center_content .question_title::before {
+  content: "*";
+  color: red;
+  position: absolute;
+  left: -10px;
+  top: 2px;
+}
+.page_wrap .center_content .question {
+  padding: 10px 60px 10px 60px;
+  border-bottom: 1px solid #bbb;
+}
+.page_wrap .center_content .question .question_wrap {
+  padding-left: 20px;
+}
+.page_wrap .center_content .question .question_wrap.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.page_wrap .center_content .question .question_wrap .fillIn {
+  display: inline-block;
+  margin-right: 10px;
+}
+.page_wrap .center_content .question .question_wrap .fillIn .fillInput {
+  border: none;
+  border-bottom: 1px solid #424242;
+  width: 80px;
+  padding: 0 5px;
+}
+.page_wrap .center_content .question .edit_question {
+  border: 1px solid #d5dde6;
+  background-color: #f6f8fa;
+  border-radius: 2px;
+  padding: 10px 5px;
+  position: relative;
+}
+.page_wrap .center_content .question .edit_question::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50px;
+  width: 10px;
+  height: 10px;
+  background-color: #b9c5d2;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.page_wrap .center_content .question .edit_question .editorWrap {
+  height: 150px;
+}
+.page_wrap .center_content .question .edit_question .editorWrap .toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #d5dde6;
+}
+.page_wrap .center_content .question .edit_question .editorWrap .text {
+  border: 1px solid #d5dde6;
+  height: 80px;
+}
+.page_wrap .center_content .footer {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #bbb;
+}
+.page_wrap .center_content .footer .btn {
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #96c0dc;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #c1daeb inset;
+  margin: 0 40px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.page_wrap .center_content .footer .btn.see {
+  color: #71adeb;
+  background-color: #f2f8fd;
+}
+.page_wrap .center_content .footer .btn.sub {
+  color: #ffffff;
+  background-color: #71adeb;
+}
+
+/*# sourceMappingURL=index.css.map */

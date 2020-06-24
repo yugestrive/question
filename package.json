@@ -1,0 +1,25 @@
+{
+  "name": "question",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:ts": "tsc -w",
+    "dev:scss": "sass --watch ./scss:./css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugestrive/question.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yugestrive/question/issues"
+  },
+  "homepage": "https://github.com/yugestrive/question#readme",
+  "devDependencies": {
+    "sass": "^1.26.9",
+    "typescript": "^3.9.5"
+  }
+}
