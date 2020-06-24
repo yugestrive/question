@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <script src="./layui/layui.js"></script>
+    <script src="./wangEditor.min.js"></script>
+    <title>登录日志</title>
+</head>
+<body>
+    <div class="page_wrap">
+        <div class="center_content">
+            <div class="left_check">
+                <div class="con">
+                    <div class="top">
+                        <div class="title">选择题</div>
+                        <div class="check_item"><div class="name">单选</div><div class="add">+</div></div>
+                        <div class="check_item"><div class="name">多选</div><div class="add">+</div></div>
+                        <div class="check_item"><div class="name">下拉框</div><div class="add">+</div></div>
+                        <div class="check_item"><div class="name">文件上传</div><div class="add">+</div></div>
+                    </div>
+                    <div class="bottom">
+                        <div class="title">填空题</div>
+                        <div class="check_item"><div class="name">单项填空</div><div class="add">+</div></div>
+                        <div class="check_item"><div class="name">多项填空</div><div class="add">+</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="head">
+                <div class="question_title">问卷标题</div>
+                <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
+            </div>
+            <form class="layui-form" action="">
+                <div class="question">
+                    <div class="question_title">1.标题（多选题）</div>
+                    <div class="question_wrap flex">
+                        <input type="checkbox" name="checkbox" value="1" disabled title="选项一" lay-skin="primary">
+                        <input type="checkbox" name="checkbox" value="2" disabled title="选项二" lay-skin="primary">
+                        <input type="checkbox" name="checkbox" value="3" disabled title="选项三" lay-skin="primary">
+                    </div>
+                    <div class="edit_question">
+                        <div class="editorWrap">
+                            <div id="editor" class="toolbar"></div>
+                            <div id="text" class="text"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question_title">2.标题（单选题）</div>
+                    <div class="question_wrap flex">
+                        <input type="radio" disabled name="sex" value="1" title="选项一">
+                        <input type="radio" disabled name="sex" value="2" title="选项二">
+                        <input type="radio" disabled name="sex" value="3" title="选项三">
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question_title">3.下拉框</div>
+                    <div class="question_wrap">
+                        <select name="city" lay-verify="select" disabled>
+                            <option value="">请选择一个城市</option>
+                            <option value="010">北京</option>
+                            <option value="021">上海</option>
+                            <option value="0571">杭州</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question_title">4.文件上传</div>
+                    <div class="question_wrap">
+                        <button type="button" disabled class="layui-btn-primary layui-input" id="fileUp"><i class="layui-icon">&#xe67c;</i>选择文件（不超过4M）</button>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question_title">5.单项填空</div>
+                    <div class="question_wrap">
+                        <input type="text" disabled name="title" required lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="question_title">6.多项填空</div>
+                    <div class="question_wrap">
+                        <div class="fillIn">
+                            <label for="">姓名：</label>
+                            <input disabled class="fillInput" type="text" />
+                        </div>
+                        <div class="fillIn">
+                            <label for="">年龄：</label>
+                            <input disabled class="fillInput" type="text" />
+                        </div>
+                        <div class="fillIn">
+                            <label for="">姓名：</label>
+                            <input disabled class="fillInput" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="footer">
+                <div class="btn see">预览</div>
+                <div class="btn sub">发布</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
