@@ -1,20 +1,59 @@
-declare abstract class Topic {
-    el: HTMLElement;
+declare type Mode = 'edit' | 'preview';
+interface TopicConfig {
     title: string;
-    no: number;
-    constructor({ el, title, no }: {
-        el: HTMLElement;
-        title: string;
-        no: number;
-    });
-    abstract create(): void;
-    abstract mouted(): void;
+}
+declare abstract class Topic {
+    protected readonly mode: Mode;
+    protected readonly ref: Element;
+    protected no: number;
+    protected el: Element;
+    protected id: string;
+    constructor(mode: Mode, ref: Element, no: number);
+    abstract inject(config: TopicConfig): this;
+    abstract create(): this;
+    abstract mouted(): this;
+    protected abstract build(): void;
+}
+interface RadioTopicConfig extends TopicConfig {
+    options: Array<string>;
 }
 declare class RadioTopic extends Topic {
-    create(): void;
-    mouted(): void;
+    config: RadioTopicConfig;
+    inject(config: RadioTopicConfig): this;
+    create(): this;
+    mouted(): this;
+    protected build(): void;
+    private buildOption;
+}
+interface CheckBoxTopicOptions {
 }
 declare class CheckboxTopic extends Topic {
-    create(): void;
-    mouted(): void;
+    inject(options: CheckBoxTopicOptions): this;
+    create(): this;
+    mouted(): this;
+    protected build(): string;
+}
+interface SelectTopicOptions {
+}
+declare class SelectTopic extends Topic {
+    inject(options: SelectTopicOptions): this;
+    create(): this;
+    mouted(): this;
+    protected build(): string;
+}
+interface UploadTopicOptions {
+}
+declare class UploadTopic extends Topic {
+    inject(options: UploadTopicOptions): this;
+    create(): this;
+    mouted(): this;
+    protected build(): string;
+}
+interface FillTopicOptions {
+}
+declare class FillTopic extends Topic {
+    inject(options: FillTopicOptions): this;
+    create(): this;
+    mouted(): this;
+    protected build(): string;
 }

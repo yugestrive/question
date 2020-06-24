@@ -16,15 +16,15 @@
                 <div class="con">
                     <div class="top">
                         <div class="title">选择题</div>
-                        <div class="check_item"><div class="name">单选</div><div class="add">+</div></div>
-                        <div class="check_item"><div class="name">多选</div><div class="add">+</div></div>
-                        <div class="check_item"><div class="name">下拉框</div><div class="add">+</div></div>
-                        <div class="check_item"><div class="name">文件上传</div><div class="add">+</div></div>
+                        <div class="check_item"><div class="name">单选</div><div class="add" data-type="radio">+</div></div>
+                        <div class="check_item"><div class="name">多选</div><div class="add" data-type="checkbox">+</div></div>
+                        <div class="check_item"><div class="name">下拉框</div><div class="add" data-type="select">+</div></div>
+                        <div class="check_item"><div class="name">文件上传</div><div class="add" data-type="upload">+</div></div>
                     </div>
                     <div class="bottom">
                         <div class="title">填空题</div>
-                        <div class="check_item"><div class="name">单项填空</div><div class="add">+</div></div>
-                        <div class="check_item"><div class="name">多项填空</div><div class="add">+</div></div>
+                        <div class="check_item"><div class="name">单项填空</div><div class="add" data-type="single-fill">+</div></div>
+                        <div class="check_item"><div class="name">多项填空</div><div class="add" data-type="mult-fill">+</div></div>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="question_title">问卷标题</div>
                 <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input"/>
             </div>
-            <form class="layui-form" action="">
+            <form id="form" class="layui-form" action="">
                 <div class="question">
                     <div class="question_title">1.标题（多选题）</div>
                     <div class="question_wrap flex">
@@ -104,5 +104,9 @@
         </div>
     </div>
 </body>
+
+<script src="./js/topic.js"></script>
+<script src="./js/boot.js"></script>
 <script src="./js/index.js"></script>
+
 </html>
