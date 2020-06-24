@@ -137,6 +137,19 @@
   border: 1px solid #d5dde6;
   height: 80px;
 }
+.page_wrap .center_content .question .edit_question .funWrap {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+.page_wrap .center_content .question .edit_question .funWrap .fun_item {
+  margin-right: 10px;
+}
+.page_wrap .center_content .question .edit_question .funWrap .fun_item .bigLittle {
+  width: 45px;
+  display: inline-block;
+}
 .page_wrap .center_content .question .edit_question .selScrrol {
   margin-top: 10px;
 }

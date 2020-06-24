@@ -140,6 +140,20 @@
                         height: 80px;
                     }
                 }
+                .funWrap {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: flex-start;
+                    .fun_item {
+                        margin-right: 10px;
+                        .bigLittle {
+                            width: 45px;
+                            display: inline-block;
+                        }
+                        
+                    }
+                }
                 .selScrrol {
                     margin-top: 10px;
                     tr {
