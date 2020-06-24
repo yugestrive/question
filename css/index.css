@@ -116,6 +116,7 @@
   border-radius: 2px;
   padding: 10px 5px;
   position: relative;
+  margin-top: 30px;
 }
 .page_wrap .center_content .question .edit_question::before {
   content: "";
