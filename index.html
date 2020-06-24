@@ -45,6 +45,39 @@
                             <div id="editor" class="toolbar"></div>
                             <div id="text" class="text"></div>
                         </div>
+                        <div class="selScrrol">
+                            <table class="table_option" cellspacing="0" cellpadding="0" width="98%">
+                                <tr class="table_head">
+                                    <td>
+                                        <span>选项文字</span>
+                                    </td>
+                                    <td class="default">默认</td>
+                                    <td class="default">上移下移</td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="选项"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="checkbox" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="选项"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="checkbox" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="选项"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="checkbox" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="addbtn">
+                            <span class="btn">
+                                <span class="icon">+</span>
+                                <a class="aText" href="javascript:">添加选项</a>
+                            </span>
+                        </div>
+                        <div class="finishBtn">完成编辑</div>
                     </div>
                 </div>
                 <div class="question">
@@ -53,6 +86,45 @@
                         <input type="radio" disabled name="sex" value="1" title="选项一">
                         <input type="radio" disabled name="sex" value="2" title="选项二">
                         <input type="radio" disabled name="sex" value="3" title="选项三">
+                    </div>
+                    <div class="edit_question">
+                        <div class="editorWrap">
+                            <div id="editor" class="toolbar"></div>
+                            <div id="text" class="text"></div>
+                        </div>
+                        <div class="selScrrol">
+                            <table class="table_option" cellspacing="0" cellpadding="0" width="98%">
+                                <tr class="table_head">
+                                    <td>
+                                        <span>选项文字</span>
+                                    </td>
+                                    <td class="default">默认</td>
+                                    <td class="default">上移下移</td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="选项"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="radio" name="radio" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="选项"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="radio" name="radio" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="选项"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="radio" name="radio" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="addbtn">
+                            <span class="btn">
+                                <span class="icon">+</span>
+                                <a class="aText" href="javascript:">添加选项</a>
+                            </span>
+                        </div>
+                        <div class="finishBtn">完成编辑</div>
                     </div>
                 </div>
                 <div class="question">
@@ -65,17 +137,80 @@
                             <option value="0571">杭州</option>
                         </select>
                     </div>
+                    <div class="edit_question">
+                        <div class="editorWrap">
+                            <div id="editor" class="toolbar"></div>
+                            <div id="text" class="text"></div>
+                        </div>
+                        <div class="selScrrol">
+                            <table class="table_option" cellspacing="0" cellpadding="0" width="98%">
+                                <tr class="table_head">
+                                    <td>
+                                        <span>选项文字</span>
+                                    </td>
+                                    <td class="default">默认</td>
+                                    <td class="default">上移下移</td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="北京"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="radio" name="select" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="上海"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="radio" name="select" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                                <tr>
+                                    <td><input class="input" type="text" placeholder="杭州"/><i class="layui-icon">&#xe61f;</i><i class="layui-icon">&#xe616;</i></td>
+                                    <td class="default"><input type="radio" name="select" title="若选中，用户在填问卷时此选项会默认被选中" lay-ignore/></td>
+                                    <td class="move default"><span>上移</span><span>下移</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="addbtn">
+                            <span class="btn">
+                                <span class="icon">+</span>
+                                <a class="aText" href="javascript:">添加选项</a>
+                            </span>
+                        </div>
+                        <div class="finishBtn">完成编辑</div>
+                    </div>
                 </div>
                 <div class="question">
                     <div class="question_title">4.文件上传</div>
                     <div class="question_wrap">
                         <button type="button" disabled class="layui-btn-primary layui-input" id="fileUp"><i class="layui-icon">&#xe67c;</i>选择文件（不超过4M）</button>
                     </div>
+                    <div class="edit_question">
+                        <div class="editorWrap">
+                            <div id="editor" class="toolbar"></div>
+                            <div id="text" class="text"></div>
+                        </div>
+                        <div class="funWrap">
+                            <div class="fun_item">
+                                <span>大小</span>
+                                <input class="bigLittle" min="0" type="number"><span class="number">M</span>
+                            </div>
+                            <div class="fun_item">
+                                <span>数量</span>
+                                <input class="bigLittle" min="0" type="number">
+                            </div>
+                        </div>
+                        <div class="finishBtn">完成编辑</div>
+                    </div>
                 </div>
                 <div class="question">
                     <div class="question_title">5.单项填空</div>
                     <div class="question_wrap">
                         <input type="text" disabled name="title" required lay-verify="required" placeholder="请输入内容" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="edit_question">
+                        <div class="editorWrap">
+                            <div id="editor" class="toolbar"></div>
+                            <div id="text" class="text"></div>
+                        </div>
+                        <div class="finishBtn">完成编辑</div>
                     </div>
                 </div>
                 <div class="question">
