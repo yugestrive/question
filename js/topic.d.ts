@@ -17,6 +17,7 @@ declare abstract class Topic {
 }
 interface RadioTopicConfig extends TopicConfig {
     options: Array<string>;
+    value: string;
 }
 declare class RadioTopic extends Topic {
     config: RadioTopicConfig;
@@ -27,6 +28,8 @@ declare class RadioTopic extends Topic {
     private buildPreview;
     private buildEdit;
     private bindEvent;
+    private editOption;
+    private checkedValue;
 }
 interface CheckBoxTopicOptions {
 }
