@@ -97,6 +97,7 @@ var RadioTopic = (function (_super) {
         });
     };
     RadioTopic.prototype.editOption = function (type, index) {
+        index = ~~index;
         if (type === 'up' && index - 1 < 0)
             return;
         if (type === 'down' && index + 1 >= this.config.options.length)

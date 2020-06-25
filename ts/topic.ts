@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-06-24 22:57:21
- * @LastEditTime: 2020-06-25 14:32:10
+ * @LastEditTime: 2020-06-25 14:48:43
  * @Description:
  */
 
@@ -208,6 +208,8 @@ class RadioTopic extends Topic {
   }
 
   private editOption(type: 'up' | 'down' | 'add' | 'remove', index: number) {
+    // 转整数
+    index = ~~index
     if (type === 'up' && index - 1 < 0) return
     if (type === 'down' && index + 1 >= this.config.options.length) return
     const option = this.config.options[index]
