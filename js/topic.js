@@ -105,7 +105,7 @@ var RadioTopic = (function (_super) {
         var option = this.config.options[index];
         switch (type) {
             case 'add':
-                this.config.options.push('选项');
+                this.config.options.push("\u65B0\u589E\u9009\u9879 " + (this.config.options.length + 1));
                 break;
             case 'remove':
                 this.config.options.splice(index, 1);

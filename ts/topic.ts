@@ -1,7 +1,7 @@
 /*
  * @Author: Cphayim
  * @Date: 2020-06-24 22:57:21
- * @LastEditTime: 2020-06-25 14:48:43
+ * @LastEditTime: 2020-06-25 14:55:26
  * @Description:
  */
 
@@ -215,7 +215,7 @@ class RadioTopic extends Topic {
     const option = this.config.options[index]
     switch (type) {
       case 'add':
-        this.config.options.push('选项')
+        this.config.options.push(`新增选项 ${this.config.options.length + 1}`)
         break
       case 'remove':
         this.config.options.splice(index, 1)
